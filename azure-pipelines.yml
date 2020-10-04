@@ -7,5 +7,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo $(Build.SourceBranch)
+- script: echo $(Build.SourceBranchName)
   displayName: 'Run a one-line script'
+
+- task: CopyFilesOverSSH@0
+  inputs:
+    sshEndpoint: $(Build.SourceBranchName)
+    contents: '**'
+    targetFolder: '/etc/nginx/sites-enabled'
+    readyTimeout: '20000'
