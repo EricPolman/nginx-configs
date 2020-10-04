@@ -10,7 +10,7 @@ steps:
 - script: echo $(Build.SourceBranchName)
   displayName: 'Echo branch name'
 
-- script: rm azure-pipelines.yml
+- script: rm azure-pipelines.yml && rm -rf .git
   displayName: 'Remove pipelines file from clone'
 
 - task: CopyFilesOverSSH@0
