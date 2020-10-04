@@ -10,7 +10,6 @@ steps:
 - script: echo $(Build.SourceBranchName)
   displayName: 'Echo branch name'
 
-steps:
 - script: rm azure-pipelines.yml
   displayName: 'Remove pipelines file from clone'
 
