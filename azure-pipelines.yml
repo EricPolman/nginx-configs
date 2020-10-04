@@ -13,13 +13,6 @@ steps:
 - script: rm azure-pipelines.yml && rm -rf .git
   displayName: 'Remove pipelines file from clone'
 
-- task: SSH@0
-  inputs:
-    sshEndpoint: $(Build.SourceBranchName)
-    runOptions: 'commands'
-    commands: 'rm -rf /etc/nginx/sites-enabled && mkdir /etc/nginx/sites-enabled'
-    readyTimeout: '20000'
-
 - task: CopyFilesOverSSH@0
   inputs:
     sshEndpoint: $(Build.SourceBranchName)
