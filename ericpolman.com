@@ -1,6 +1,6 @@
 server {
-    listen 80 ericpolman.com;
-    listen [::]:80 ericpolman.com;
+    listen 80;
+    listen [::]:80;
 
     root /var/vhosts/ericpolman.com/current;
     index index.php index.html index.htm index.nginx-debian.html;
