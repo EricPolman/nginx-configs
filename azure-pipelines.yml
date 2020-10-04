@@ -20,3 +20,10 @@ steps:
     contents: '**'
     targetFolder: '/etc/nginx/sites-enabled'
     readyTimeout: '20000'
+
+- task: SSH@0
+  inputs:
+    sshEndpoint: $(Build.SourceBranchName)
+    runOptions: 'commands'
+    commands: 'service nginx reload'
+    readyTimeout: '20000'
