@@ -8,7 +8,11 @@ pool:
 
 steps:
 - script: echo $(Build.SourceBranchName)
-  displayName: 'Run a one-line script'
+  displayName: 'Echo branch name'
+
+steps:
+- script: rm azure-pipelines.yml
+  displayName: 'Remove pipelines file from clone'
 
 - task: CopyFilesOverSSH@0
   inputs:
